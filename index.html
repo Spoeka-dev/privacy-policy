@@ -8,132 +8,143 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #1a1f2e;
-      --surface: #232938;
-      --surface2: #2a3144;
-      --ink: #e8ecf4;
-      --muted: #8892aa;
-      --accent: #4a9eff;
-      --accent-dim: #1e3a5f;
-      --border: #2f3a50;
-      --rule: #2a3347;
+      /* Colors adapted from Multishift Modern Matte Palette */
+      --bg: #FDFCFB;
+      --surface: #FFFFFF;
+      --surface-variant: #E0E3E5;
+      --ink: #191C1D;
+      --muted: #43474E;
+      --primary: #4A6572;
+      --secondary: #F9AA33;
+      --accent-dim: #D1E4EE;
+      --border: #C3C7CE;
+      --rule: #E0E3E5;
     }
-    body { background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.75; }
-    header { background:var(--surface);border-bottom:1px solid var(--border);padding:3.5rem 2rem 3rem;text-align:center; }
-    header .label { font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.5;margin-bottom:.75rem;color:var(--accent); }
-    header h1 { font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:400;margin-bottom:1rem;color:var(--ink); }
-    header .meta { font-size:.82rem;color:var(--muted); }
-    .container { max-width:760px;margin:0 auto;padding:0 1.5rem 4rem; }
-    .intro-card { background:var(--accent-dim);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2.5rem 0 2rem;font-size:.92rem;color:#a8ccf0; }
-    .privacy-badge { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.85rem; }
-    .badge-item { display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:var(--muted); }
-    .badge-item .dot { width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:.4rem;flex-shrink:0; }
-    section { margin-bottom:2.75rem; }
-    .section-number { font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.35rem;opacity:.8; }
-    h2 { font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);color:var(--ink); }
-    p { font-size:.93rem;color:#b0bccf;margin-bottom:.85rem; }
-    ul { padding-left:1.4rem;margin-bottom:.85rem; }
-    ul li { font-size:.93rem;color:#b0bccf;margin-bottom:.4rem; }
-    .rights-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.85rem;margin:1rem 0; }
-    .right-card { background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem; }
-    .right-card .right-title { font-weight:500;font-size:.85rem;color:var(--accent);margin-bottom:.3rem; }
-    .right-card p { font-size:.82rem;color:var(--muted);margin:0; }
-    .contact-box { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.75rem;margin-top:1rem; }
-    .contact-box p { margin:.25rem 0;font-size:.9rem;color:#b0bccf; }
-    a { color:var(--accent);text-decoration:none; } a:hover { text-decoration:underline;opacity:.85; }
-    footer { text-align:center;padding:2rem 1rem;font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule);margin-top:1rem; }
-    @media(max-width:480px){ header{padding:2.5rem 1.25rem 2rem;} .rights-grid{grid-template-columns:1fr;} .privacy-badge{grid-template-columns:1fr 1fr;} }
+    body { background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; font-weight:400; line-height:1.75; }
+    header { background:var(--primary); padding:4rem 2rem 3.5rem; text-align:center; color: white; }
+    header .label { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.75rem; color:var(--secondary); font-weight: 500; }
+    header h1 { font-family:'DM Serif Display',serif; font-size:clamp(2rem,6vw,3rem); font-weight:400; margin-bottom:1rem; }
+    header .meta { font-size:.85rem; opacity: 0.9; }
+    
+    .container { max-width:760px; margin:0 auto; padding:0 1.5rem 4rem; }
+    .intro-card { background:var(--accent-dim); border-left:4px solid var(--primary); border-radius:0 8px 8px 0; padding:1.5rem; margin:2.5rem 0; font-size:.95rem; color:#061E27; }
+    
+    .privacy-badge { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.5rem; margin-bottom:3rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+    .badge-item { display:flex; align-items:center; gap:.6rem; font-size:.85rem; color:var(--muted); font-weight: 500; }
+    .badge-item .dot { width:8px; height:8px; border-radius:50%; background:var(--secondary); flex-shrink:0; }
+    
+    section { margin-bottom:3rem; }
+    .section-number { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--primary); font-weight:700; margin-bottom:.5rem; }
+    h2 { font-family:'DM Serif Display',serif; font-size:1.5rem; font-weight:400; margin-bottom:1rem; color:var(--primary); border-bottom:2px solid var(--accent-dim); padding-bottom: 0.5rem; }
+    
+    p { font-size:1rem; color:var(--ink); margin-bottom:1rem; opacity: 0.9; }
+    ul { padding-left:1.5rem; margin-bottom:1rem; }
+    ul li { font-size:1rem; color:var(--ink); margin-bottom:.5rem; opacity: 0.9; }
+    
+    .rights-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .right-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.2rem; transition: transform 0.2s; }
+    .right-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .right-card .right-title { font-weight:700; font-size:.9rem; color:var(--primary); margin-bottom:.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .right-card p { font-size:.85rem; color:var(--muted); margin:0; line-height: 1.5; }
+    
+    .contact-box { background:var(--surface-variant); border-radius:16px; padding:1.5rem 2rem; margin-top:1rem; border: 1px solid var(--border); }
+    .contact-box p { margin:.4rem 0; font-size:.95rem; color:var(--ink); }
+    
+    a { color:var(--primary); text-decoration:none; font-weight: 500; border-bottom: 1px solid var(--accent-dim); } 
+    a:hover { border-bottom-color: var(--primary); }
+    
+    footer { text-align:center; padding:3rem 1rem; font-size:.85rem; color:var(--muted); border-top:1px solid var(--rule); margin-top:2rem; }
+    
+    @media(max-width:480px){ 
+      header{padding:3rem 1.5rem 2.5rem;} 
+      .rights-grid{grid-template-columns:1fr;} 
+      .privacy-badge{grid-template-columns:1fr;} 
+    }
   </style>
 </head>
 <body>
 <header>
-  <p class="label">Legal Document</p>
+  <p class="label">Legal Transparency</p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Multishift App &middot; Last updated: March 2026</p>
+  <p class="meta">Multishift &middot; Last updated: March 2026</p>
 </header>
 <div class="container">
-  <div class="intro-card">Your privacy is at the core of how this app is built. We do not operate any servers, and your data never leaves your device &mdash; unless you choose to back it up to your own Google Drive account using industry-standard encryption.</div>
+  <div class="intro-card">Your privacy is the foundation of Multishift. We operate without external servers; your data stays on your device or in your own encrypted Google Drive backup.</div>
+  
   <div class="privacy-badge">
-    <div class="badge-item"><span class="dot"></span>AES-256 Encrypted Backups</div>
-    <div class="badge-item"><span class="dot"></span>No external servers</div>
-    <div class="badge-item"><span class="dot"></span>No third-party analytics</div>
-    <div class="badge-item"><span class="dot"></span>Local-only Calendar Sync</div>
-    <div class="badge-item"><span class="dot"></span>Local notifications only</div>
-    <div class="badge-item"><span class="dot"></span>You control your keys</div>
+    <div class="badge-item"><span class="dot"></span>AES-256 Encryption</div>
+    <div class="badge-item"><span class="dot"></span>Local-First Data</div>
+    <div class="badge-item"><span class="dot"></span>No User Tracking</div>
+    <div class="badge-item"><span class="dot"></span>App-Specific Drive Access</div>
+    <div class="badge-item"><span class="dot"></span>On-Device Processing</div>
+    <div class="badge-item"><span class="dot"></span>Exportable Data</div>
   </div>
 
   <section>
-    <p class="section-number">01</p>
+    <p class="section-number">Section 01</p>
     <h2>Data Controller</h2>
     <p>The controller responsible for this application within the meaning of the General Data Protection Regulation (GDPR) is:</p>
     <div class="contact-box">
       <p><strong>[Your Name / Company Name]</strong></p>
-      <p>[Street Address], [City, Postal Code, Country]</p>
+      <p>[Street Address], [City, Country]</p>
       <p>Email: [Your Support Email]</p>
     </div>
   </section>
 
   <section>
-    <p class="section-number">02</p>
-    <h2>Data Storage &amp; Processing</h2>
-    <p><strong>We do not collect, transmit, or store any personal data on our own servers.</strong></p>
-    <p>All data you enter is stored exclusively in one of the following places, both under your full control:</p>
+    <p class="section-number">Section 02</p>
+    <h2>Local Data Handling</h2>
+    <p><strong>Multishift is designed to function without a central backend.</strong></p>
+    <p>All personal data, including shift schedules, financial settings, and notes, is stored locally in your app's private SQLite database. We never have access to this information.</p>
     <ul>
-      <li><strong>Locally on your device</strong> &ndash; Stored in the app's private SQLite database. This includes your shift patterns, nicknames, notes, salary settings, and earnings history.</li>
-      <li><strong>System Calendar Access</strong> &ndash; To show your work shifts alongside your personal life, the app reads your device's system calendar. This data is processed <strong>locally only</strong> to display it in the app's calendar view; it is never stored by us or transmitted externally.</li>
-      <li><strong>Public Holiday API</strong> &ndash; The app fetches holiday lists via the Nager.Date API. No personal data or device identifiers are sent; only the selected country/region and year are used to retrieve the data.</li>
+      <li><strong>Calendar Permission:</strong> The app reads your system calendar locally to merge your personal events into the shift view. This data is never stored by us.</li>
+      <li><strong>Holiday Sync:</strong> We use the Nager.Date API to provide holiday information. No personal identifiers are transmitted during this request.</li>
     </ul>
   </section>
 
   <section>
-    <p class="section-number">03</p>
-    <h2>Google Drive Backup &amp; AES-256 Encryption</h2>
-    <p>The backup feature is manual and user-initiated. To protect your data, the app implements high-level security measures:</p>
-    <p><strong>Encryption:</strong> Every backup is <strong>AES-256 encrypted</strong> in GCM mode on your device before it is uploaded to your personal Google Drive. This ensures that the content remains private and unreadable to anyone without your unique recovery key.</p>
+    <p class="section-number">Section 03</p>
+    <h2>Encrypted Backups (Google Drive)</h2>
+    <p>Backups are user-initiated and secure. We implement the following protections:</p>
+    <p><strong>AES-256 GCM Encryption:</strong> Your backup file is encrypted on your device using a key unique to you before it is uploaded. Only your <strong>Recovery Key</strong> can unlock it.</p>
     <ul>
-      <li><strong>Recovery Key:</strong> You are solely responsible for the <strong>Recovery Key</strong> generated by the app. Because encryption happens locally, we do not have access to this key and cannot recover your data if the key is lost.</li>
-      <li><strong>App-Specific Access:</strong> The app uses the <code>appDataFolder</code> scope. This means it can only see and manage the files it has created itself; it has no access to your other photos, documents, or data in Google Drive.</li>
-      <li><strong>Revocation:</strong> You can revoke access at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account settings</a>.</li>
+      <li><strong>User Responsibility:</strong> You must save your Recovery Key. We cannot reset or recover this key for you.</li>
+      <li><strong>Limited Scope:</strong> We only request access to the "App Data" folder on your Drive, ensuring we cannot see your other personal files.</li>
     </ul>
   </section>
 
   <section>
-    <p class="section-number">04</p>
-    <h2>Legal Basis for Processing</h2>
-    <p>Operations occur locally on your device or within your own cloud account. The legal basis for the optional backup is your <strong>consent (Art. 6(1)(a) GDPR)</strong>, which you give by initiating the backup process.</p>
-    <p>If you contact us for support, we process your contact details based on <strong>Art. 6(1)(f) GDPR</strong> (Legitimate Interest) and delete them once the matter is resolved.</p>
-  </section>
-
-  <section>
-    <p class="section-number">05</p>
-    <h2>Permissions &amp; Third Parties</h2>
-    <ul>
-      <li><strong>Google Play Store:</strong> Technical metadata (install stats, device type) is handled by Google under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">their privacy policy</a>.</li>
-      <li><strong>Calendar Permission:</strong> Required to display system events. This data never leaves the device.</li>
-      <li><strong>Exact Alarm Permission:</strong> Used solely to trigger your shift reminders accurately at the requested time.</li>
-    </ul>
-  </section>
-
-  <section>
-    <p class="section-number">06</p>
-    <h2>Your Rights</h2>
-    <p>Under the GDPR, you have the right to access, rectification, and erasure. Since we hold no personal data on our end, you can exercise these rights directly:</p>
+    <p class="section-number">Section 04</p>
+    <h2>Your Rights (GDPR)</h2>
+    <p>You have the full right to access and control your data. Multishift makes this easy through built-in features:</p>
     <div class="rights-grid">
-      <div class="right-card"><p class="right-title">Data Portability</p><p>Use the "CSV Export" feature to take your data with you at any time.</p></div>
-      <div class="right-card"><p class="right-title">Right to Erasure</p><p>Use the "Reset App" button to wipe all local data and keys instantly.</p></div>
-      <div class="right-card"><p class="right-title">Right to Info</p><p>Your data is transparently stored in your Drive's "App Data" folder.</p></div>
+      <div class="right-card">
+        <p class="right-title">Data Portability</p>
+        <p>Export all your data into a standard CSV file at any time via the settings.</p>
+      </div>
+      <div class="right-card">
+        <p class="right-title">Right to Erasure</p>
+        <p>Use the "Reset App" feature to permanently delete all local databases and keys.</p>
+      </div>
+      <div class="right-card">
+        <p class="right-title">Consent Revocation</p>
+        <p>Disconnect your Google Drive account at any time to stop cloud features.</p>
+      </div>
     </div>
   </section>
 
   <section>
-    <p class="section-number">07</p>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this policy to reflect app improvements. The "last updated" date will be revised accordingly.</p>
+    <p class="section-number">Section 05</p>
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Exact Alarms:</strong> Used to ensure shift reminders trigger exactly when you need them.</li>
+      <li><strong>Notifications:</strong> Used only for your shift and event reminders.</li>
+    </ul>
   </section>
 </div>
 
 <footer>
-  <p>&copy; 2026 Multishift &middot; Built with Privacy in Mind</p>
+  <p>&copy; 2026 Multishift &middot; Built with a Privacy-First Architecture</p>
 </footer>
 </body>
 </html>
